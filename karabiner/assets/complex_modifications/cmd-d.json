@@ -1,0 +1,35 @@
+{
+    "title": "Command+D：VS Code / Zed → Control+D",
+    "rules": [
+        {
+            "description": "Command+D：仅 VS Code / Zed → Control+D",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "d",
+                        "modifiers": {
+                            "mandatory": ["command"],
+                            "optional": ["caps_lock"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "d",
+                            "modifiers": ["left_control"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.VSCode$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

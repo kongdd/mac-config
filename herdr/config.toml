@@ -1,0 +1,18 @@
+onboarding = false
+
+# 原主题未显式配置，默认使用 Catppuccin Mocha。
+# [theme]
+# name = "catppuccin"
+
+[theme]
+name = "catppuccin-latte"
+
+[theme.custom]
+panel_bg = "#ffffff"
+surface0 = "#f3f4f6"
+accent = "#008ec4"
+
+[[keys.command]]
+key = "ctrl+shift+g"
+type = "shell"
+command = "herdr plugin action invoke herdr-sidebar.open-sidebar"

@@ -1,0 +1,20 @@
+{
+  "title": "K380: F11 全屏",
+  "rules": [
+    {
+      "description": "F11 切换当前应用全屏",
+      "manipulators": [
+        {
+          "type": "basic",
+          "conditions": [
+            { "type": "device_if", "identifiers": [{ "vendor_id": 1133, "product_id": 45890 }] }
+          ],
+          "from": { "key_code": "f11" },
+          "to": [
+            { "key_code": "f", "modifiers": ["left_control", "left_command"] }
+          ]
+        }
+      ]
+    }
+  ]
+}

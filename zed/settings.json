@@ -1,0 +1,183 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+    "disable_ai": false,
+    "cursor_shape": "bar",
+    "ssh_connections": [
+        {
+            "host": "atmos",
+            "args": [],
+            "projects": [
+                {
+                    "paths": [
+                        "/public/home/kongdd"
+                    ]
+                }
+            ]
+        }
+    ],
+    "use_system_window_tabs": false,
+    "agent_servers": {
+        "pi": {
+            "type": "custom",
+            "command": "npx",
+            "args": ["-y", "pi-acp"],
+            "env": {},
+        },
+    },
+    "git_panel": {
+        "tree_view": true,
+    },
+    "cli_default_open_behavior": "new_window",
+    "proxy": "",
+    "tabs": {
+        "file_icons": true,
+        "git_status": true,
+    },
+    "title_bar": {
+        "button_layout": "platform_default",
+        "show_branch_status_icon": true,
+    },
+    "status_bar": {
+        "active_encoding_button": "non_utf8",
+    },
+    "vim": {
+        "toggle_relative_line_numbers": false,
+    },
+    "buffer_line_height": {
+        "custom": 1.350000023841858,
+    },
+    "lsp": {
+        "julia": {
+            "settings": {
+                "julia.lint.missingrefs": "none",
+            },
+        },
+    },
+    "icon_theme": {
+        "mode": "light",
+        "light": "VSCode Icons for Zed (Light Angular)",
+        "dark": "VSCode Icons for Zed (Light Angular)",
+    },
+    "project_panel": {
+        "dock": "left",
+    },
+    "session": {
+        "trust_all_worktrees": true,
+    },
+    "terminal": {
+        "copy_on_select": true,
+        "button": true,
+        "font_size": 14.0,
+        "cursor_shape": "bar",
+        "blinking": "on",
+    },
+    "search": {
+        "include_ignored": false,
+    },
+    "multi_cursor_modifier": "cmd_or_ctrl",
+    "scroll_sensitivity": 1.4,
+    "minimap": {
+        "show": "never",
+    },
+    "file_types": {
+        "FortranFreeForm": ["*.tpl", "*.nml", "*.tpl", "*.nml"],
+        "shellscript": [
+            "Renviron",
+            "*.toml",
+            "NAMESPACE",
+            "sshd_config",
+            "*.rgb",
+            "flowbasin",
+            "*.repo",
+            "ldpaths",
+            "environment",
+            "*.service",
+            "Renviron",
+            "*.toml",
+            "NAMESPACE",
+            "sshd_config",
+            "*.rgb",
+            "flowbasin",
+            "*.repo",
+            "ldpaths",
+            "environment",
+            "*.service",
+        ],
+        "matlab": ["*.m", "*.m"],
+        "makefile": [
+            "*.hello",
+            "Makefile_params",
+            "Makevars",
+            "*.win",
+            "*.linux",
+            "Makefile_mpi",
+            "Makeconf",
+            "*.hello",
+            "Makefile_params",
+            "Makevars",
+            "*.win",
+            "*.linux",
+            "Makefile_mpi",
+            "Makeconf",
+        ],
+        "javascript": ["assets", "hydro", "assets", "hydro"],
+        "drawio": ["*.svg", "*.svg"],
+        "powershell": ["*.opt", "*.opt"],
+        "markdown": ["*.rmd", "*.md", "*.rmd", "*.md"],
+        "quarto": ["*.qmd", "*.qmd"],
+        "mermaid": ["*.mmd", "*.mmd"],
+        "rmd": ["*.Rmd", "*.Rmd"],
+        "csv": ["*.csv", "*.csv"],
+        "cpp": ["*.cpp", "*.cpp"],
+        "r": [
+            "*.site",
+            "DESCRIPTION",
+            "*.txt",
+            "hosts",
+            "installr",
+            "profile",
+            "*.d",
+            ".radian_profile",
+            "*.R",
+            "*.site",
+            "DESCRIPTION",
+            "*.txt",
+            "hosts",
+            "installr",
+            "profile",
+            "*.d",
+            ".radian_profile",
+            "*.R",
+        ],
+    },
+    "auto_indent_on_paste": true,
+    "show_whitespaces": "all",
+    "show_edit_predictions": true,
+    "ensure_final_newline_on_save": true,
+    "wrap_guides": [80],
+    "soft_wrap": "editor_width",
+    "tab_size": 4,
+    "base_keymap": "VSCode",
+    "ui_font_size": 16,
+    "buffer_font_size": 13.0,
+    "theme": {
+        "mode": "light",
+        "light": "Ayu Light",
+        "dark": "KTRZ Monokai",
+    },
+}

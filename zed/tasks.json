@@ -1,0 +1,10 @@
+[
+  {
+    "label": "Sublime Merge: Open Project",
+    "command": "smerge",
+    "args": ["$ZED_WORKTREE_ROOT"],
+    "use_new_terminal": false,
+    "reveal": "never",
+    "hide": "always"
+  }
+]

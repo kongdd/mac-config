@@ -1,0 +1,412 @@
+[
+  {
+    "plugin_id": "herdr-sidebar",
+    "name": "herdr-sidebar",
+    "version": "0.15.0",
+    "min_herdr_version": "0.8.0",
+    "description": "VS Code-style sidebar: file explorer + source control (with ✧ AI commit messages) in one herdr pane.",
+    "manifest_path": "/Users/kongdd/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a/plugins/herdr-sidebar/herdr-plugin.toml",
+    "plugin_root": "/Users/kongdd/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a/plugins/herdr-sidebar",
+    "enabled": true,
+    "platforms": [
+      "linux",
+      "macos",
+      "windows"
+    ],
+    "build": [
+      {
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "/bin/sh",
+          "scripts/fetch-or-build.sh"
+        ]
+      },
+      {
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/fetch-or-build.ps1"
+        ]
+      }
+    ],
+    "actions": [
+      {
+        "id": "open-git",
+        "title": "Toggle source control",
+        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--toggle-git"
+        ]
+      },
+      {
+        "id": "open-git-windows",
+        "title": "Toggle source control",
+        "description": "Open a separate Source Control pane (focus it if open; close it if focused).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--toggle-git"
+        ]
+      },
+      {
+        "id": "open-sidebar",
+        "title": "Toggle sidebar",
+        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--toggle"
+        ]
+      },
+      {
+        "id": "open-sidebar-windows",
+        "title": "Toggle sidebar",
+        "description": "Open the sidebar at its configured dock edge (focus it if open; close it if focused).",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--toggle"
+        ]
+      },
+      {
+        "id": "quick-open",
+        "title": "Quick Open",
+        "description": "Open or focus the sidebar and show the file picker.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--quick-open"
+        ]
+      },
+      {
+        "id": "quick-open-windows",
+        "title": "Quick Open",
+        "description": "Open or focus the sidebar and show the file picker.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--quick-open"
+        ]
+      },
+      {
+        "id": "redeploy",
+        "title": "Redeploy sidebar panes",
+        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "bash",
+          "scripts/redeploy.sh"
+        ]
+      },
+      {
+        "id": "redeploy-windows",
+        "title": "Redeploy sidebar panes",
+        "description": "Close all sidebar panes in every workspace so they respawn on the latest build.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          "powershell",
+          "-NoProfile",
+          "-ExecutionPolicy",
+          "Bypass",
+          "-File",
+          "scripts/redeploy.ps1"
+        ]
+      },
+      {
+        "id": "refresh-sidebars",
+        "title": "Refresh all sidebars",
+        "description": "Refresh running sidebar views without closing preview or editor panes.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--refresh-sidebars"
+        ]
+      },
+      {
+        "id": "refresh-sidebars-windows",
+        "title": "Refresh all sidebars",
+        "description": "Refresh running sidebar views without closing preview or editor panes.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--refresh-sidebars"
+        ]
+      },
+      {
+        "id": "show-explorer",
+        "title": "Show Explorer",
+        "description": "Open or focus the sidebar and switch to Explorer.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--show-explorer"
+        ]
+      },
+      {
+        "id": "show-explorer-windows",
+        "title": "Show Explorer",
+        "description": "Open or focus the sidebar and switch to Explorer.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--show-explorer"
+        ]
+      },
+      {
+        "id": "show-git",
+        "title": "Show Source Control",
+        "description": "Open or focus the sidebar and switch to Source Control.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--show-git"
+        ]
+      },
+      {
+        "id": "show-git-windows",
+        "title": "Show Source Control",
+        "description": "Open or focus the sidebar and switch to Source Control.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--show-git"
+        ]
+      },
+      {
+        "id": "show-search",
+        "title": "Show Search",
+        "description": "Open or focus the sidebar and switch to project text search.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--show-search"
+        ]
+      },
+      {
+        "id": "show-search-windows",
+        "title": "Show Search",
+        "description": "Open or focus the sidebar and switch to project text search.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--show-search"
+        ]
+      },
+      {
+        "id": "update",
+        "title": "Update sidebar",
+        "description": "Install the latest stable release and refresh sidebar panes; preserve previews.",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--update-latest"
+        ]
+      },
+      {
+        "id": "update-windows",
+        "title": "Update sidebar",
+        "description": "Install the latest stable release and refresh sidebar panes; preserve previews.",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe",
+          "--update-latest"
+        ]
+      }
+    ],
+    "events": [
+      {
+        "on": "pane.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "pane.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "tab.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "tab.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "workspace.created",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--ensure"
+        ]
+      },
+      {
+        "on": "workspace.focused",
+        "platforms": [
+          "windows"
+        ],
+        "command": [
+          ".\\target\\release\\herdr-sidebar-ensure.exe"
+        ]
+      }
+    ],
+    "panes": [
+      {
+        "id": "sidebar",
+        "title": "Sidebar",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-sidebar"
+        ]
+      },
+      {
+        "id": "source-control",
+        "title": "Source Control",
+        "platforms": [
+          "linux",
+          "macos"
+        ],
+        "placement": "split",
+        "command": [
+          "./target/release/herdr-sidebar",
+          "--view",
+          "git"
+        ]
+      }
+    ],
+    "source": {
+      "kind": "github",
+      "owner": "alexarthurs",
+      "repo": "herdr-sidebar",
+      "subdir": "plugins/herdr-sidebar",
+      "resolved_commit": "ee47651974bd1cc0fc7e3bd182dbfaf151b3c243",
+      "managed_path": "/Users/kongdd/.config/herdr/plugins/github/herdr-sidebar-7ff2582a7c8a",
+      "installed_unix_ms": 1791116438205
+    }
+  }
+]

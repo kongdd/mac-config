@@ -1,0 +1,4 @@
+[[mgr.prepend_keymap]]
+on = "<D-e>"
+run = 'shell "open ."'
+desc = "在 Finder 中打开当前目录"

@@ -1,0 +1,55 @@
+{
+    "title": "Command+H：编辑器替换，其他应用禁用",
+    "rules": [
+        {
+            "description": "Command+H：VS Code / Zed → Command+Option+F，其他应用禁用",
+            "manipulators": [
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": ["command"],
+                            "optional": ["caps_lock"]
+                        }
+                    },
+                    "to": [
+                        {
+                            "key_code": "f",
+                            "modifiers": ["left_command", "left_option"]
+                        }
+                    ],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_if",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.VSCode$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "type": "basic",
+                    "from": {
+                        "key_code": "h",
+                        "modifiers": {
+                            "mandatory": ["command"],
+                            "optional": ["caps_lock"]
+                        }
+                    },
+                    "to": [{ "key_code": "vk_none" }],
+                    "conditions": [
+                        {
+                            "type": "frontmost_application_unless",
+                            "bundle_identifiers": [
+                                "^com\\.microsoft\\.VSCode$",
+                                "^dev\\.zed\\.Zed$"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
