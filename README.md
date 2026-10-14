@@ -1,5 +1,6 @@
 # 1 mac系统的推荐软件
 
+## 1.1 系统配置
 - `karabiner`     : 快捷键自定义，配合罗技K380（其他则需要自己适配快捷键定义），**以贴近Windows体验**
 - `snipaste`      : 截图、贴图工具（多系统适配）
 - `Maccy`         : 类似于win+v历史粘贴板
@@ -12,21 +13,26 @@
 - `rustdesk`      : 被远程
 - `智谱autoglm`    : 语音输入法
 
-## 1.1 编程必备
+## 1.2 编程必备
 - `kitty`         : 支持显示image的终端，可在pi中贴图、显示图
 - `herdr`
 - `zed`,`vscode`, `sublime-merge`
 
 k380键盘需配合<https://github.com/kongdd/k380_fn.rs>使用。
 
-## 1.2 安装方式
+## 1.3 手机远程
+
+- `termius`: +ssh，手机远程电脑（需要有网络知识基础，ip互通）；
+- `rathole`: ip打洞，需要有一个具有公网ip的云服务器；
+
+# 2 安装方式
 能通过命令安装的软件
 
 ```bash
 brew install kitty kerdr git sublime-merge
 ```
 
-# 2 如何使用本repo的配置
+# 3 如何使用本repo的配置
 
 ```bash
 git clone https://github.com/kongdd/mac-config ~/.config
