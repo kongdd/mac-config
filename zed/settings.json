@@ -15,6 +15,21 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+    // 保留默认排除项，并隐藏群晖元数据目录。
+    "file_scan_exclusions": [
+        "**/.git",
+        "**/.svn",
+        "**/.hg",
+        "**/.jj",
+        "**/.sl",
+        "**/.repo",
+        "**/CVS",
+        "**/.DS_Store",
+        "**/Thumbs.db",
+        "**/.classpath",
+        "**/.settings",
+        "**/@eaDir"
+    ],
     "disable_ai": false,
     "cursor_shape": "bar",
     "ssh_connections": [

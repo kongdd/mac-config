@@ -16,7 +16,11 @@
     "context": "Editor",
     "bindings": {
       "ctrl-d": "editor::DuplicateLineDown",
-      "ctrl-u": "editor::DuplicateLineUp"
+      "ctrl-u": "editor::DuplicateLineUp",
+      "cmd-home": "editor::MoveToBeginning",
+      "cmd-end": "editor::MoveToEnd",
+      "cmd-shift-home": "editor::SelectToBeginning",
+      "cmd-shift-end": "editor::SelectToEnd"
     }
   },
   {

@@ -18,3 +18,7 @@ htop
 ai-quota
 fs
 gh
+
+nfs4-idmap
+herdr.sock.agent
+credentials
