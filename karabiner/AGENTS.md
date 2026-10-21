@@ -1,0 +1,2 @@
+- 不要直接修改karabiner/karabiner.json，通过修改`karabiner/karabiner.R`并运行，实现Karabiner-Elements配置的更新。
+- optional参数理解为：额外按着这些键，也允许触发；按着的键会保留。
