@@ -2,15 +2,15 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-  <key>Label</key><string>local.mount-kong-nas</string>
+  <key>Label</key><string>mkdir-mnt</string>
   <key>ProgramArguments</key>
   <array>
     <string>/bin/sh</string>
-    <string>-c</string>
-    <string>exec "$HOME/.config/bin/mount-kong-nas.sh"</string>
+    <string>/Users/kongdd/.config/nas/mkdir-mnt.sh</string>
+    <string>501</string>
+    <string>20</string>
   </array>
   <key>RunAtLoad</key><true/>
-  <key>StartInterval</key><integer>60</integer>
-  <key>StandardErrorPath</key><string>/tmp/local.mount-kong-nas.err</string>
+  <key>StandardErrorPath</key><string>/var/log/mkdir-mnt.log</string>
 </dict>
 </plist>
