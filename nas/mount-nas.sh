@@ -19,3 +19,6 @@ auth="//${username}:${password}@kong-nas"
 /sbin/mount_smbfs -s -o "$option" "$auth/CMIP6"      /mnt/z
 /sbin/mount_smbfs -s -o "$option" "$auth/Researches" /mnt/y
 /sbin/mount_smbfs -s -o "$option" "$auth/CUG-hydro"  /mnt/o
+
+# NAS 挂载完成后，再挂载微信文件目录；登录时仅执行一次。
+/bin/bash "$HOME/.config/nas/mount-apps.sh"
