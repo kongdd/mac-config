@@ -22,3 +22,5 @@ gh
 nfs4-idmap
 herdr.sock.agent
 credentials
+
+*.conf

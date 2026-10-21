@@ -1,0 +1,34 @@
+#!/usr/bin/expect -f
+# Read SMB credentials without putting the password in process arguments or logs.
+log_user 0
+set timeout 25
+lassign $argv share target
+if {$argc != 2 || ![file isdirectory $target]} {exit 2}
+set mounts [exec /sbin/mount]
+if {[string first " on $target (" $mounts] >= 0 || [string first " on /System/Volumes/Data$target (" $mounts] >= 0} {exit 0}
+
+set fd [open /etc/samba/credentials r]
+set user ""
+set password ""
+while {[gets $fd line] >= 0} {
+    if {[regexp {^\s*(username|password)\s*=(.*)$} $line -> key value]} {
+        if {$key eq "username"} {set user [string trim $value]}
+        if {$key eq "password"} {set password [string trim $value]}
+    }
+}
+close $fd
+if {$user eq "" || $password eq ""} {exit 1}
+
+spawn /sbin/mount_smbfs -s -o soft,filemode=0775,dirmode=0775 "//$user@kong-nas/$share" $target
+set prompts 0
+expect {
+    -re {Password for [^:]*: } {
+        if {[incr prompts] > 1} {exit 77}
+        send -- "$password\r"
+        exp_continue
+    }
+    timeout {exit 124}
+    eof {}
+}
+set password ""
+exit [lindex [wait] 3]

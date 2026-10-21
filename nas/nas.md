@@ -1,0 +1,5 @@
+- NAS 配置源码统一存放于 `~/.config/bin/`；`synthetic.conf` 和 `nsmb.conf` 是指向 `/etc/` 下同名系统文件的链接，Git 仅记录链接，不记录目标内容。
+- root 任务 `local.prepare-mnt` 开机及每 60 秒运行，建立 `/mnt` 的 tmpfs 和 `x/y/z/o` 目录；系统运行副本仍位于 `/Library/`，修改源码后以 root 运行 `install-nas-root.sh` 部署并重载。
+- 用户任务 `local.mount-kong-nas` 登录及每 60 秒调用本目录的 `mount-kong-nas.sh` 和 `mount-kong-nas.exp`；`~/Library/LaunchAgents/` 中的 plist 链接到本目录，修改 plist 后需重载任务。
+- 四个共享均通过 SMB3 连接 `kong-nas`：`GitHub → /mnt/x`、`CMIP6 → /mnt/z`、`Researches → /mnt/y`、`CUG-hydro → /mnt/o`；已挂载则跳过。
+- 凭据仅从 `/etc/samba/credentials` 读取，不迁移、不纳入 Git；重启后挂载目录自动重建，NAS 数据不受影响。
