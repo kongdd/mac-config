@@ -23,8 +23,12 @@ remap <- function(from, to, cond = NULL, optional = "caps_lock", ...) {
   )
 }
 
-maps <- function(from, to, ...) {
-  unname(Map(function(f, t) remap(f, t, ...), from, to))
+# 命名向量：old = new（原按键 → 目标按键）。
+maps <- function(x, ...) {
+  froms <- names(x)
+  tos <- unname(x)
+  stopifnot(!is.null(froms), all(nzchar(froms)))
+  unname(Map(\(from, to) remap(from, to, ...), froms, tos))
 }
 
 rule <- function(description, manipulators) {

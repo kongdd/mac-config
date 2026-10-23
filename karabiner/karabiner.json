@@ -25,7 +25,7 @@
                         ]
                     },
                     {
-                        "description": "K380：VS Code / Zed 中 Cmd+右 Alt → 文档首，Cmd+右 Ctrl → 文档尾（兼容 Mac 键码及左 Ctrl/Command 对调）",
+                        "description": "select to file home/end (k380/editors)",
                         "manipulators": [
                             {
                                 "conditions": [
@@ -50,7 +50,7 @@
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
-                                        "mandatory": ["control"],
+                                        "mandatory": ["command"],
                                         "optional": ["caps_lock", "shift"]
                                     }
                                 },
@@ -85,7 +85,7 @@
                                 "from": {
                                     "key_code": "right_command",
                                     "modifiers": {
-                                        "mandatory": ["command"],
+                                        "mandatory": ["control"],
                                         "optional": ["caps_lock", "shift"]
                                     }
                                 },
@@ -118,44 +118,9 @@
                                     }
                                 ],
                                 "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": {
-                                        "mandatory": ["control"],
-                                        "optional": ["caps_lock", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "end",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 45890,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
-                                            "^dev\\.zed\\.Zed$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
                                     "key_code": "right_option",
                                     "modifiers": {
-                                        "mandatory": ["control"],
+                                        "mandatory": ["command"],
                                         "optional": ["caps_lock", "shift"]
                                     }
                                 },
@@ -190,42 +155,7 @@
                                 "from": {
                                     "key_code": "right_control",
                                     "modifiers": {
-                                        "mandatory": ["command"],
-                                        "optional": ["caps_lock", "shift"]
-                                    }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "end",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "conditions": [
-                                    {
-                                        "identifiers": [
-                                            {
-                                                "is_keyboard": true,
-                                                "product_id": 45890,
-                                                "vendor_id": 1133
-                                            }
-                                        ],
-                                        "type": "device_if"
-                                    },
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.VSCode$",
-                                            "^dev\\.zed\\.Zed$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_option",
-                                    "modifiers": {
-                                        "mandatory": ["command"],
+                                        "mandatory": ["control"],
                                         "optional": ["caps_lock", "shift"]
                                     }
                                 },
@@ -242,22 +172,6 @@
                     {
                         "description": "所有设备：右 Ctrl / Command → 行首，右 Option → 行尾（Windows App 使用 Home / End）",
                         "manipulators": [
-                            {
-                                "conditions": [
-                                    {
-                                        "bundle_identifiers": [
-                                            "^com\\.microsoft\\.rdc\\.macos$"
-                                        ],
-                                        "type": "frontmost_application_if"
-                                    }
-                                ],
-                                "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [{ "key_code": "home" }],
-                                "type": "basic"
-                            },
                             {
                                 "conditions": [
                                     {
@@ -292,26 +206,13 @@
                             },
                             {
                                 "from": {
-                                    "key_code": "right_control",
-                                    "modifiers": { "optional": ["any"] }
-                                },
-                                "to": [
-                                    {
-                                        "key_code": "left_arrow",
-                                        "modifiers": ["left_command"]
-                                    }
-                                ],
-                                "type": "basic"
-                            },
-                            {
-                                "from": {
                                     "key_code": "right_command",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
                                     {
                                         "key_code": "left_arrow",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": ["right_command"]
                                     }
                                 ],
                                 "type": "basic"
@@ -324,7 +225,7 @@
                                 "to": [
                                     {
                                         "key_code": "right_arrow",
-                                        "modifiers": ["left_command"]
+                                        "modifiers": ["right_command"]
                                     }
                                 ],
                                 "type": "basic"
