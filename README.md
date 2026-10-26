@@ -2,6 +2,8 @@
 
 ## 1.1 系统配置
 - `karabiner`     : 快捷键自定义，配合罗技K380（其他则需要自己适配快捷键定义），**以贴近Windows体验**
+- `hammerspoon`   : lua编程式系统快捷键定义，<https://github.com/kongdd/config-hammerspoon>
+
 - `snipaste`      : 截图、贴图工具（多系统适配）
 - `Maccy`         : 类似于win+v历史粘贴板
 - `Rectangle`     : 窗口快捷键定义，**以贴近Windows体验**

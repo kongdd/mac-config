@@ -25,6 +25,7 @@
         "**/.repo",
         "**/CVS",
         "**/.DS_Store",
+        "**/.Rproj.user",
         "**/Thumbs.db",
         "**/.classpath",
         "**/.settings",

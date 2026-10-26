@@ -50,14 +50,6 @@ rules <- list(
     )
   ),
   rule(
-    "单按左 Option 打开 Apps，组合键不变（排除 Windows App）",
-    list(remap(
-      "left_option", "left_option",
-      cond = list(not_windows),
-      to_if_alone = list(list(shell_command = "/usr/bin/open -a /System/Applications/Apps.app"))
-    ))
-  ),
-  rule(
     "Excel：Ctrl+Enter → Ctrl+Option+Enter（兼容 K380 Ctrl/Command 对调）",
     list(
       remap(
@@ -69,14 +61,6 @@ rules <- list(
         cond = list(app("com.microsoft.Excel"), k380)
       )
     )
-  ),
-  rule(
-    "K380：Finder 中 Del → Command+Backspace（移到废纸篓）",
-    list(remap(
-      "delete_forward", c(key("left_command+delete_or_backspace"), list(`repeat` = FALSE)),
-      cond = list(k380, app("com.apple.finder")),
-      optional = c("fn", "caps_lock")
-    ))
   ),
   rule(
     "Word：Command+←/→ 翻页，Command+↑/↓ 到文档首尾（兼容 K380 Ctrl/Command 对调）",
