@@ -25,20 +25,14 @@ rules <- list(
     )
   ),
   rule(
-    "所有设备：右 Ctrl / Command → 行首，右 Option → 行尾（Windows App 使用 Home / End）",
-    c(
-      maps(
-        c("right_command" = "home", "right_option" = "end"),
-        cond = list(windows), optional = "any"
+    "所有设备：右 Command → Home，右 Option → End",
+    maps(
+      c(
+        # "right_control" = "right_command+left_arrow", #? 远程调试 win -> mac
+        "right_command" = "home",
+        "right_option" = "end"
       ),
-      maps(
-        c(
-          # "right_control" = "right_command+left_arrow", #? 远程调试 win -> mac
-          "right_command" = "right_command+left_arrow",
-          "right_option" = "right_command+right_arrow"
-        ),
-        optional = "any"
-      )
+      optional = "any"
     )
   ),
   rule(
