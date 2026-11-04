@@ -20,7 +20,15 @@ fs
 gh
 
 nfs4-idmap
+herdr
+herdr-app
 herdr.sock.agent
 credentials
 
 *.conf
+*lock*
+
+nas
+
+autossh
+code-server

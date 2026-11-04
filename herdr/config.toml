@@ -1,11 +1,15 @@
 onboarding = false
 
+[experimental]
+allow_nested = true
+
 # 原主题未显式配置，默认使用 Catppuccin Mocha。
 # [theme]
 # name = "catppuccin"
 
 [theme]
 name = "catppuccin-latte"
+auto_switch = false
 
 [theme.custom]
 panel_bg = "#ffffff"
